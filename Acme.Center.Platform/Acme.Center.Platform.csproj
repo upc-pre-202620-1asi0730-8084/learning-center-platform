@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <InvariantGlobalization>false</InvariantGlobalization> <!-- Changed to false -->
+        <LangVersion>14</LangVersion>
+        <Version>1.2.0</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- EntityFrameworkCore Database Persistence related packages -->
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.14" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.14" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.14">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <!-- MySQL Database Persistence related packages -->
+        <PackageReference Include="MySql.EntityFrameworkCore" Version="10.0.12" />
+        <!-- Naming convention conversion related packages -->
+        <PackageReference Include="Humanizer" Version="3.0.10"/>
+        <!-- OpenAPI documentation related packages -->
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.14" />
+        <PackageReference Include="Scalar.AspNetCore" Version="2.18.7" />
+        <!-- BCrypt Encription related packages -->
+        <PackageReference Include="BCrypt.Net-Next" Version="4.2.0"/>
+        <!-- JSON Web Token related packages -->
+        <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="8.23.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.14" />
+        <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.23.0" />
+        <!-- Mediator pattern related packages -->
+        <PackageReference Include="Cortex.Mediator" Version="3.1.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Update="Iam\Resources\IamMessages.es.resx">
+            <DependentUpon>IamMessages.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Profiles\Resources\ProfilesMessages.es.resx">
+            <DependentUpon>ProfilesMessages.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Update="Publishing\Resources\PublishingMessages.es.resx">
+            <DependentUpon>PublishingMessages.cs</DependentUpon>
+        </EmbeddedResource>
+    </ItemGroup>
+
+</Project>
